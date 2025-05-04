@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Traffic Accidents</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .gallery-item {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>European Traffic Accidents</h1>
+
+        <section id="accident-chart">
+            <h2>Accidents per Month (2023)</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
+        </section>
+
+        <section id="news-headlines">
+            <h2>Today's News Headlines</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Traffic Accident on A4 Causes Major Delays</li>
+                <li class="list-group-item">Cyclist Seriously Injured in City Center Collision</li>
+                <li class="list-group-item">Motorway Pile-up Due to Heavy Rain</li>
+            </ul>
+        </section>
+
+        <section id="photo-gallery">
+            <h2>Photo Gallery</h2>
+            <div class="row">
+                <div class="col-md-4 gallery-item">
+                    <img src="https://via.placeholder.com/350x200?text=Accident+Image+1" alt="Accident Image 1" class="img-fluid">
+                    <p>Description of accident 1.</p>
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://via.placeholder.com/350x200?text=Accident+Image+2" alt="Accident Image 2" class="img-fluid">
+                    <p>Description of accident 2.</p>
+                </div>
+                <div class="col-md-4 gallery-item">
+                    <img src="https://via.placeholder.com/350x200?text=Accident+Image+3" alt="Accident Image 3" class="img-fluid">
+                    <p>Description of accident 3.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: '# of Accidents',
+                    data: [65, 59, 80, 81, 56, 55, 40, 68, 98, 70, 50, 75],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
